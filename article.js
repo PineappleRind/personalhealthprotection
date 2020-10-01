@@ -45,19 +45,35 @@ let scrolled = (scroll / height) * 100;
   let progressText = document.getElementById("progressText");
   progressBar.style.width = scrolled + "%";
   progressText.innerHTML = "Progress: " + parseInt(scrolled)  + "%";
+  if (scrolled > 99) {
+      progressText.innerHTML = 'Thanks for reading!';
+      progressBar.style.background = 'linear-gradient(to right, #f7ce94, #f0f794)';
+      progressBar.style.opacity = '1';
+      progressBar.style.cursor = 'auto';
+  } else {
+    progressText.innerHTML = "Progress: " + parseInt(scrolled)  + "%";
+  }
 }
 
 var articleList = document.getElementById("articleList");
 var sticky = articleList.offsetTop;
-
+let article = document.getElementById("articleContent");
 function stickyList() {
   if (window.pageYOffset + 100 > sticky) {
     articleList.style.position = 'fixed';
     articleList.style.top = '100px';
     articleList.style.height = '400px';
+    articleList.style.display = 'block';
   } else {
     articleList.style.position = 'relative';
     articleList.style.top = '';
     articleList.style.height = 'fit-content';
+  }
+
+  var x = window.matchMedia("(max-width: 800px)");
+  if (x.matches) {
+     articleList.style.position = 'relative';
+    articleList.style.top = '';
+     articleList.style.height = 'fit-content';
   }
 }

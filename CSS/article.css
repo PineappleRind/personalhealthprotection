@@ -91,9 +91,9 @@ hr {
 
 .subtitle {
     text-transform:uppercase;
-    font-weight:200;
+    font-weight:300;
     font-family:roboto, sans-serif;
-    font-size:2vw;
+    font-size:3vw;
     color:#333;
     background:rgba(255, 255, 255, 0.322);
     padding:10px;
@@ -119,11 +119,18 @@ hr {
     text-align: center;
     position:fixed;
     right:0;
+    font-size:20px;
 }
 
 .article-list > p {
     width:100%;
     background-color:#e3e3e3;
+    padding:10px;
+    cursor:pointer;
+}
+
+.article-list > p:hover {
+    background-color:#cbcbcb;
 }
 
 .scroll-bar {
@@ -135,8 +142,8 @@ hr {
     height: 30px;
     z-index:20;
     opacity:0.8;
+    cursor:progress;
 }
-
 #progressText {
     position:fixed;
     top:-15px;
@@ -155,5 +162,22 @@ hr {
 
     .back-to-home {
         font-size:1.6vw
+    }
+}
+
+@media screen and (max-width:800px) {
+    .article {
+        flex-direction: column;
+        width:100%;
+    }
+
+    .article-content {
+        width:100%;
+    }
+
+    .article-list {
+        width:100%;
+        bottom: 0;
+        display:none;
     }
 }
