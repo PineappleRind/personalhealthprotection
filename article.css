@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100;0,200;0,249;0,306;0,427;1,100;1,162;1,283;1,547&family=Montserrat&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+ * {
+     box-sizing: border-box;
+     transition:0.5s;
+}
+
+body {
+    background:#eaeaea;
+    height:100%;
+}
+
+article {
+    font-family:Roboto;
+    background-color:#f2f2f2;
+    width:100%;
+    height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  perspective: 2px;
+}
+strong {
+    font-weight:500;
+}
+
+h1 {
+    height:fit-content;
+    display:fixed;
+}
+
+hr {
+    background-color:rgb(139, 139, 139);
+    border-radius:4px;
+    margin-top:10px;
+    height:2px;
+    border:none;
+    width:80%;
+}
+
+.break {
+    display:block;
+    height:30px;
+}
+
+
+  .article-title {
+    font-family:Epilogue;
+    font-size:5vw;
+    border-bottom: 3px solid #ddd;
+    text-align: center;
+    padding:80px;
+    min-height: 500px; 
+    margin-top:0;
+    content: " ";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transform: translateZ(-1px) scale(1.5);
+    background-size: 100%;
+    z-index: -1;
+    background-image:url('https://bit.ly/30maAHv');
+}
+  
+
+.title {
+    background:rgba(255,255,255,0.5);
+    padding:10px;
+    border-radius:1px;
+}
+
+.back-to-home {
+    text-transform:uppercase;
+    font-weight:400;
+    font-family:roboto, sans-serif;
+    font-size:3vw;
+    color:#333;
+    padding:10px;
+    background:rgb(196, 196, 196);
+    padding:10px;
+    border-radius:1px;
+    border:3px solid #ccc;
+    cursor:pointer;
+}
+
+.back-to-home:hover {
+    letter-spacing: 0.8px;
+    background:rgb(241, 241, 241);
+    border:3px solid #fff;
+}
+
+.subtitle {
+    text-transform:uppercase;
+    font-weight:200;
+    font-family:roboto, sans-serif;
+    font-size:2vw;
+    color:#333;
+    background:rgba(255, 255, 255, 0.322);
+    padding:10px;
+    border-radius:5px;
+    width:fit-content;
+    margin:auto;
+}
+
+
+.article-content {
+    background:linear-gradient(270deg, #e3e3e1, #e1dee1);
+    height:1000px;
+    padding:30px 40px;
+    font-size:20px;
+    margin-top:500px;
+}
+
+@media screen and (min-width:1000px) {
+    .article-title {
+        font-size:3vw;
+    }
+
+    .subtitle {
+        font-size:1vw;
+    }
+
+    .back-to-home {
+        font-size:1.6vw
+    }
+}

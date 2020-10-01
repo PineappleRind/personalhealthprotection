@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles-v2.css">
+</head>
+<body>
+    <nav class="navbar">
+
+        <div class="container">
+          <div class="navbar-header">
+            <button class="navbar-toggler" data-toggle="open-navbar1">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+            <a href="#">
+              <h4>Personal<span>Health</span>Protection</h4>
+            </a>
+          </div>
+      
+          <div class="navbar-menu" id="open-navbar1">
+            <ul class="navbar-nav">
+              <li><a href="php-home.html">Home</a></li>
+              <li class="active">
+                  <a href="#">About us</a>
+                      </li>
+                  <li class="nav-item">
+                    <a id="modalButton"href="#">Contact us</a>
+      
+                      <div id="modal" class="modal">
+                      
+                        <div class="modal-content" id="modalContent">
+                          <span class="close">&times;</span>
+                          <h4>Email us at</h4>
+                          <p>email@email.email</p>
+                        </div>
+                  </li>
+                      <li class="nav-item">
+                      <a class="nav-item" href="#">Blog</a>
+                    </li>
+            </ul>
+          </div>
+        </div>
+      </nav> 
+
+      <div class="about-page">
+          <h1 class="about-header-title">About <span class="emphasize">Personal Health Protection</span></h1>
+          <p class="about-subtitle">Personal Health Protection is a blog website made to help you safely navigate through the COVID-19 pandemic. On our website, you will find advice for cleaning your groceries properly, </p>
+          
+            </div>
+            
+      </div>
+      <script>
+                let modal = document.getElementById("modal");
+      let btn = document.getElementById("modalButton");
+      let span = document.getElementsByClassName("close")[0];
+      let modalContent = document.getElementById('modalContent');
+      
+      btn.onclick = function() {
+        modal.style.display = "block";
+        modalContent.style.animationName = "modal-fade-in";
+      }
+      
+      span.onclick = function() {
+        modal.style.display = "none";
+      }
+      
+      window.onclick = function(event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      }
+    
+
+function handleSmallScreens() {
+  document.querySelector('.navbar-toggler').addEventListener('click', () => {
+    let navbarMenu = document.querySelector('.navbar-menu');
+
+    if (navbarMenu.style.display === 'flex') {
+      navbarMenu.style.display = 'none';
+    }
+
+    else {
+    navbarMenu.style.display = 'flex';
+    }
+  })
+}
+
+handleSmallScreens();
+
+      </script> 
+</body>
+</html>
