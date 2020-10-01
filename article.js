@@ -13,14 +13,20 @@ item2.innerHTML = randomitem(words);
 item3.innerHTML = randomitem(words);
 
 if (item1.innerHTML === item2.innerHTML) {
-    item1.innerHTML = randomitem(words);
-    item2.innerHTML = randomitem(words);
+    item3.innerHTML = 'How to Clean Your Groceries Properly';
+    item2.innerHTML = 'Which Supplements Should I Take?';
+    item1.innerHTML = 'What a pandemic can teach you about simple living';
 }
-if (item2.innerHTML === item3.innerHTML) {
-    item3.innerHTML = randomitem(words);
-    item2.innerHTML = randomitem(words);
+else if (item2.innerHTML === item3.innerHTML) {
+    item3.innerHTML = 'How to Clean Your Groceries Properly';
+    item2.innerHTML = 'Which Supplements Should I Take?';
+    item1.innerHTML = 'What a pandemic can teach you about simple living';
 }
-if (item1.innerHTML === item3.innerHTML) {
-    item1.innerHTML = randomitem(words);
-    item3.innerHTML = randomitem(words);
+else if (item1.innerHTML === item3.innerHTML) {
+    item3.innerHTML = 'Which Supplements Should I Take?';
+    item2.innerHTML = 'How to Clean your Groceries Properly';
+    item1.innerHTML = 'What a pandemic can teach you about simple living';
+}
+else {
+    console.log('No iterations of fixes for algoritm')
 }
