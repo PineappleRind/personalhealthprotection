@@ -30,3 +30,34 @@ else if (item1.innerHTML === item3.innerHTML) {
 else {
     console.log('No iterations of fixes for algoritm')
 }
+
+window.onscroll = function(){
+    progressBar();
+    stickyList();
+};
+
+
+function progressBar() {
+    let scroll = document.body.scrollTop || document.documentElement.scrollTop;
+let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+let scrolled = (scroll / height) * 100;
+  let progressBar = document.getElementById("progressBar");
+  let progressText = document.getElementById("progressText");
+  progressBar.style.width = scrolled + "%";
+  progressText.innerHTML = "Progress: " + parseInt(scrolled)  + "%";
+}
+
+var articleList = document.getElementById("articleList");
+var sticky = articleList.offsetTop;
+
+function stickyList() {
+  if (window.pageYOffset + 100 > sticky) {
+    articleList.style.position = 'fixed';
+    articleList.style.top = '100px';
+    articleList.style.height = '400px';
+  } else {
+    articleList.style.position = 'relative';
+    articleList.style.top = '';
+    articleList.style.height = 'fit-content';
+  }
+}
