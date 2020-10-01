@@ -12,8 +12,15 @@ item1.innerHTML = randomitem(words);
 item2.innerHTML = randomitem(words);
 item3.innerHTML = randomitem(words);
 
-if (item1.innerHTML === item2.innerHTML || item2.innerHTML === item3.innerHTML || item1.innerHTML === item3.innerHTML) {
+if (item1.innerHTML === item2.innerHTML) {
     item1.innerHTML = randomitem(words);
     item2.innerHTML = randomitem(words);
+}
+if (item2.innerHTML === item3.innerHTML) {
+    item3.innerHTML = randomitem(words);
+    item2.innerHTML = randomitem(words);
+}
+if (item1.innerHTML === item3.innerHTML) {
+    item1.innerHTML = randomitem(words);
     item3.innerHTML = randomitem(words);
 }
