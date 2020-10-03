@@ -108,9 +108,9 @@ hr {
     height:fit-content;
     padding:30px 40px;
     font-size:20px;
-    width:70%;
+    width: 70%;
+    animation:load 6s;
 }
-
 .article-list {
     height:fit-content;
     width:30%;
@@ -143,13 +143,34 @@ hr {
     z-index:20;
     opacity:0.8;
     cursor:progress;
+    transition: height 1s;
 }
+
 #progressText {
     position:fixed;
     top:-15px;
     left:0;
     font-size:20px;
     font-family:Montserrat;
+}
+
+#toTop {
+    width:50px;
+    height:50px;
+    border:none;
+    border-radius:50%;
+    padding:10px;
+    background:linear-gradient(to right, rgb(143, 188, 217),rgb(136, 203, 136));
+    position:fixed;
+    font-size:30px;
+    color:white;
+    bottom:20px;
+    right:20px;
+    z-index:6;
+}
+
+@keyframes load {
+    from {transform:translateX(-20px); opacity:0;}
 }
 @media screen and (min-width:800px) {
     .article-title {
