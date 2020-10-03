@@ -43,15 +43,22 @@ let height = document.documentElement.scrollHeight - document.documentElement.cl
 let scrolled = (scroll / height) * 100;
   let progressBar = document.getElementById("progressBar");
   let progressText = document.getElementById("progressText");
-  progressBar.style.width = scrolled + "%";
-  progressText.innerHTML = "Progress: " + parseInt(scrolled)  + "%";
+  progressBar.style.width = (Math.ceil(scrolled / 2) * 2 )+ "%";
+  progressText.innerHTML = "Progress: " + Math.ceil(scrolled * 2) / 2  + "%";
   if (scrolled > 99) {
       progressText.innerHTML = 'Thanks for reading!';
       progressBar.style.background = 'linear-gradient(to right, #f7ce94, #f0f794)';
       progressBar.style.opacity = '1';
       progressBar.style.cursor = 'auto';
-  } else {
+      snackbar();
+  } else if (scrolled < 0) {
+    progressText.innerHTML = 'Ouch!' 
+    progressText.style.animationName = 'shake';
+    progressText.style.color = 'red';
+  }  else {
     progressText.innerHTML = "Progress: " + parseInt(scrolled)  + "%";
+    progressText.style.color = 'black';
+    progressText.style.animationName = '';
   }
 }
 
@@ -77,3 +84,27 @@ function stickyList() {
      articleList.style.height = 'fit-content';
   }
 }
+
+let toTop = document.getElementById("toTop");
+document.addEventListener('scroll', function() {scrollFunction()});
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    toTop.style.opacity = "1";
+  } else {
+    toTop.style.opacity = "0";
+  }
+}
+
+toTop.addEventListener("click", function(){topFunction();})
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+function snackbar() {
+  var snack = document.getElementById("snackbar");
+  snack.className = "snackbar show";
+  setTimeout(function(){ snack.className = snack.className.replace("show", ""); }, 5000);
+}
+
+console.log('Web design by PineappleRind');
