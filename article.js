@@ -12,12 +12,7 @@ item1.innerHTML = randomitem(words);
 item2.innerHTML = randomitem(words);
 item3.innerHTML = randomitem(words);
 
-if (item1.innerHTML === item2.innerHTML) {
-    item3.innerHTML = 'How to Clean Your Groceries Properly';
-    item2.innerHTML = 'Which Supplements Should I Take?';
-    item1.innerHTML = 'What a pandemic can teach you about simple living';
-}
-else if (item2.innerHTML === item3.innerHTML) {
+if (item2.innerHTML === item3.innerHTML || item1.innerHTML === item2.innerHTML) {
     item3.innerHTML = 'How to Clean Your Groceries Properly';
     item2.innerHTML = 'Which Supplements Should I Take?';
     item1.innerHTML = 'What a pandemic can teach you about simple living';
@@ -36,15 +31,14 @@ window.onscroll = function(){
     stickyList();
 };
 
-
 function progressBar() {
-    let scroll = document.body.scrollTop || document.documentElement.scrollTop;
+  let scroll = document.body.scrollTop || document.documentElement.scrollTop;
 let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
 let scrolled = (scroll / height) * 100;
   let progressBar = document.getElementById("progressBar");
   let progressText = document.getElementById("progressText");
-  progressBar.style.width = (Math.ceil(scrolled / 2) * 2 )+ "%";
-  progressText.innerHTML = "Progress: " + Math.ceil(scrolled * 2) / 2  + "%";
+  progressBar.style.width = scrolled + "%";
+  progressText.innerHTML = "Progress: " + scrolled * 2  + "%";
   if (scrolled > 99) {
       progressText.innerHTML = 'Thanks for reading!';
       progressBar.style.background = 'linear-gradient(to right, #f7ce94, #f0f794)';
@@ -64,11 +58,10 @@ let scrolled = (scroll / height) * 100;
 
 var articleList = document.getElementById("articleList");
 var sticky = articleList.offsetTop;
-let article = document.getElementById("articleContent");
 function stickyList() {
-  if (window.pageYOffset + 100 > sticky) {
+  if (window.pageYOffset > 100) {
     articleList.style.position = 'fixed';
-    articleList.style.top = '100px';
+    articleList.style.top = '400px';
     articleList.style.height = '400px';
     articleList.style.display = 'block';
   } else {
@@ -94,13 +87,12 @@ function scrollFunction() {
     toTop.style.opacity = "0";
   }
 }
-
-toTop.addEventListener("click", function(){topFunction();})
 // When the user clicks on the button, scroll to the top of the document
 function topFunction() {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
 }
+
 function snackbar() {
   var snack = document.getElementById("snackbar");
   snack.className = "snackbar show";
