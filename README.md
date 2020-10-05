@@ -3,8 +3,7 @@
 
 ### About us
 
-We are a blogging website were we post updates and blogs about the pandemic 
-ex: What vitamins to take? And how to clean your grocerys.
+We are a blogging website. On our website we post updates and blogs about the ongoing global pandemic.
 
 Since the pandemic is slowing down, this website when finished *might* be used for some other blog.
 Most of the articles will be written by [@FFlop](https://github.com/fflop)
