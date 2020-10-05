@@ -4,19 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Personal Health Protection</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/styles-v2.css">
 </head>
 <body>
-  <header>
-     <nav>
-         <ul>
-             <li><a href="#">Home</a></li>
-             <li><a href="#">About</a></li>
-             <li><a href="#">Contact</a></li>
-             <li><a class="special" href="#">Blog</a></li>
-         </ul>
-     </nav>
- </header>
+    <nav class="navbar">
+        <div class="container">
+          <div class="navbar-header">
+            <button class="navbar-toggler" data-toggle="open-navbar1">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+            <a href="#">
+              <h4>Personal<span>Health</span>Protection</h4>
+            </a>
+          </div>
+      
+          <div class="navbar-menu" id="open-navbar1">
+            <ul class="navbar-nav">
+              <li class="active"><a href="#">Home</a></li>
+              <li class="nav-item">
+                  <a href="php-about.html">About us</a><a id="modalButton"href="#">Contact us</a>
+      
+                      <div id="modal" class="modal">
+                      
+                        <div class="modal-content" id="modalContent">
+                          <span class="close">&times;</span>
+                          <h4>Email us at</h4>
+                          <p>email@email.email</p>
+                        </div>
+                      </li>
+                      <li class="nav-item">
+                      <a class="nav-item" href="#">Blog</a>
+                    </li>
+            </ul>
+          </div>
+        </div>
+      </nav> 
+
       <div class="main">
         <div class="hero-image">
         <h1 class="title-homepage">Personal Health Protection</h1>
@@ -43,6 +68,6 @@
           </div>
         </div>
       </div>
-      <script src="site.js"></script> 
+      <script src="js/site.js"></script> 
 </body>
 </html>

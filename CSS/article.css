@@ -1,0 +1,250 @@
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100;0,200;0,249;0,306;0,427;1,100;1,162;1,283;1,547&family=Montserrat&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+ * {
+     box-sizing: border-box;
+     transition:0.5s ease-in-out;
+     -o-transition: all 0.5s ease-in-out;
+     -webkit-transition: all 0.5s;
+     -moz-transition: all 0.5s;
+     animation:load 1s;
+ }
+
+ body {
+     margin:0;
+ }
+html  {
+    background:#eaeaea;
+    height:100%;
+    margin:0;
+    scroll-behavior: smooth;
+}
+
+article {
+    font-family:Roboto;
+    background-color:#f2f2f2;
+    width:100%;
+}
+
+strong {
+    font-weight:500;
+}
+
+h1 {
+    height:fit-content;
+}
+
+hr {
+    background-color:rgb(139, 139, 139);
+    border-radius:4px;
+    margin-top:10px;
+    height:2px;
+    border:none;
+}
+
+.article {
+    display:flex;
+    flex-direction:row;
+    height:100%;
+}
+
+.break {
+    display:block;
+    height:20px;
+}
+
+
+  .article-title {
+    font-family:Epilogue;
+    font-size:5vw;
+    border-bottom: 3px solid #ddd;
+    text-align: center;
+    padding:80px;
+    min-height: 500px; 
+    z-index: 1;
+    background:url('https://whr.tn/34fpiRT'); 
+    background-attachment: fixed;
+    background-position-y: bottom;
+    background-repeat: no-repeat;
+    background-size:cover;
+}
+  
+
+.title {
+    background:rgba(255,255,255,0.5);
+    padding:10px;
+    border-radius:1px;
+}
+
+.back-to-home {
+    text-transform:uppercase;
+    font-weight:400;
+    font-family:roboto, sans-serif;
+    font-size:3vw;
+    color:#333;
+    padding:10px;
+    background:rgb(196, 196, 196);
+    padding:10px;
+    border-radius:1px;
+    border:3px solid #ccc;
+    cursor:pointer;
+}
+
+.back-to-home:hover {
+    letter-spacing: 0.8px;
+    background:rgb(241, 241, 241);
+    border:3px solid #fff;
+}
+
+.subtitle {
+    text-transform:uppercase;
+    font-weight:300;
+    font-family:roboto, sans-serif;
+    font-size:3vw;
+    color:#333;
+    background:rgba(255, 255, 255, 0.322);
+    padding:10px;
+    border-radius:5px;
+    width:fit-content;
+    margin:auto;
+}
+
+
+.article-content {
+    background:linear-gradient(270deg, #e3e3e1, #e1dee1);
+    height:fit-content;
+    padding:30px 40px;
+    font-size:20px;
+    width: 70%;
+}
+.article-list {
+    height:fit-content;
+    width:30%;
+    height:100%;
+    padding:10px;
+    text-align: center;
+    position:fixed;
+    right:0;
+    font-size:20px;
+}
+
+.article-list > p {
+    width:100%;
+    background-color:#e3e3e3;
+    padding:10px;
+    cursor:pointer;
+}
+
+.article-list > p:hover {
+    background-color:#cbcbcb;
+}
+
+.scroll-bar {
+    background:linear-gradient(to right, rgb(81, 255, 0),rgb(0, 255, 98));
+    position:fixed;
+    left:0;
+    top:0;
+    bottom:70%;
+    height: 30px;
+    z-index:20;
+    opacity:0.8;
+    cursor:progress;
+    transition: height 1s;
+}
+
+#progressText {
+    position:fixed;
+    top:-15px;
+    left:0;
+    font-size:20px;
+    font-family:Montserrat;
+    animation-duration: 1s;
+}
+
+#toTop {
+    width:50px;
+    height:50px;
+    border:none;
+    border-radius:50%;
+    padding:10px;
+    background:linear-gradient(to right, rgb(143, 188, 217),rgb(136, 203, 136));
+    position:fixed;
+    font-size:30px;
+    color:white;
+    bottom:20px;
+    right:20px;
+    z-index:6;
+}
+
+/* The snackbar - position it at the bottom and in the middle of the screen */
+.snackbar {
+    visibility: hidden; /* Hidden by default. Visible on click */
+    min-width: 250px; /* Set a default minimum width */
+    margin-left: -125px; /* Divide value of min-width by 2 */
+    background-color: #333; /* Black background color */
+    color: #fff; /* White text color */
+    text-align: center; /* Centered text */
+    border-radius: 2px; /* Rounded borders */
+    padding: 16px; /* Padding */
+    position: fixed; /* Sit on top of the screen */
+    z-index: 1; /* Add a z-index if needed */
+    left: 50%; /* Center the snackbar */
+    bottom: -100px; /* 30px from the bottom */
+    font-weight:200;
+    font-family:roboto;
+    cursor:pointer;
+}
+
+.snackbar:hover {
+    background-color:#999;
+}
+  /* Show the snackbar when clicking on a button (class added with JavaScript) */
+  .snackbar.show {
+    visibility: visible; /* Show the snackbar */
+    bottom:30px;
+  }
+
+@keyframes load {
+    from {transform:translateY(-10px); opacity:0;}
+}
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+  }
+@media screen and (min-width:800px) {
+    .article-title {
+        font-size:3vw;
+    }
+
+    .subtitle {
+        font-size:1vw;
+    }
+
+    .back-to-home {
+        font-size:1.6vw
+    }
+}
+
+@media screen and (max-width:800px) {
+    .article {
+        flex-direction: column;
+        width:100%;
+    }
+
+    .article-content {
+        width:100%;
+    }
+
+    .article-list {
+        width:100%;
+        bottom: 0;
+        display:none;
+    }
+}
