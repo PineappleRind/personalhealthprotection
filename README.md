@@ -1,5 +1,5 @@
 # Personal Health Protection
-### **Keeping you safe and updated during the COVID-19 Pandemic**
+### **Helping you safely navigate through the COVID-19 Pandemic**
 
 ### About us
 
